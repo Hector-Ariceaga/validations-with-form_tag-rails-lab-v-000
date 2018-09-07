@@ -10,7 +10,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
+<<<<<<< HEAD
     if @post.save
+=======
+    if @post.valid?
+      @post = Post.create(post_params)
+>>>>>>> 8d2bcacd0d6d450873ec43b9b5074d289fa0efb3
       redirect_to @post
     else
       render :new
@@ -22,9 +27,16 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.new(post_params)
 
+<<<<<<< HEAD
     if @post.update(post_params)
+=======
+    if @post.valid?
+      @post = Post.find(params[:id])
+      @post.update(post_params)
+
+>>>>>>> 8d2bcacd0d6d450873ec43b9b5074d289fa0efb3
       redirect_to post_path(@post)
     else
       render :edit

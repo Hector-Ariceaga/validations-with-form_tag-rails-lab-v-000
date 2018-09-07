@@ -6,7 +6,11 @@
       <h2>There were some errors:</h2>
       <ul>
         <% @author.errors.full_messages.each do |message| %>
+<<<<<<< HEAD
           <li><%= message %></li>
+=======
+          <li><% message %></li>
+>>>>>>> 8d2bcacd0d6d450873ec43b9b5074d289fa0efb3
         <% end %>
       </ul>
     </div>
@@ -17,12 +21,20 @@
     <%= text_field_tag "name", @author.name %>
   </div>
 
+<<<<<<< HEAD
   <div class="field<%= ' field_with_errors' if @author.errors[:email].any? %>">
+=======
+  <div class="field<%= ' field_with_errors' if @author.errors[:name].any? %>">
+>>>>>>> 8d2bcacd0d6d450873ec43b9b5074d289fa0efb3
     <%= label_tag "email", "Email" %>
     <%= text_field_tag "email", @author.email %>
   </div>
 
+<<<<<<< HEAD
   <div class="field<%= ' field_with_errors' if @author.errors[:phone_number].any? %>">
+=======
+  <div class="field<%= ' field_with_errors' if @author.errors[:name].any? %>">
+>>>>>>> 8d2bcacd0d6d450873ec43b9b5074d289fa0efb3
     <%= label_tag "phone_number", "Phone Number" %>
     <%= text_field_tag "phone_number", @author.phone_number %>
   </div>
